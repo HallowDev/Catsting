@@ -1,4 +1,4 @@
-function CatstingHome() {
+function catstingHome() {
     let xhr = new XMLHttpRequest();
 
     xhr.open("GET","https://catfact.ninja/breeds",false);
@@ -61,5 +61,23 @@ function CatstingHome() {
     paragraph2.appendChild(text2);
     paragraph3.appendChild(text3);
 }
+
+
+if(window.location.href == 'http://127.0.0.1:5500/index.html') {
+    catstingHome();
+}
+
+function randomFact() {
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("GET","https://catfact.ninja/fact",false);
     
-CatstingHome();
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            console.log(xhr.responseText);
+            let response = JSON.parse(xhr.responseText);
+            document.getElementById('anecdote').innerHTML = response.fact
+        }
+    }
+    xhr.send();
+}
