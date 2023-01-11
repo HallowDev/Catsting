@@ -1,3 +1,10 @@
 .active {
-    color: black;
+    font-weight: bold;
+}
+
+.card {
+    height: 180px;
+    width: 350px;
+    text-align: center;
+    background-color: #343434;
 }
