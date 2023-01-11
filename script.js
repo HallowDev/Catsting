@@ -8,9 +8,35 @@ function CatstingHome() {
             console.log(xhr.responseText);
             let response = JSON.parse(xhr.responseText);
             races = response.total
+            console.log(response)
+            for(data in response) {
+                i = 0;
+                coats = []
+                response.data.forEach(function(element) {
+                    coats[i] = element.coat;
+                    i++
+                });
+            
+            }
+        
         }
     }
     xhr.send();
+
+    const counts = {}
+
+    coats.forEach(function(x) {
+        counts[x] = (counts[x] || 0) + 1;
+    })
+    console.log(counts)
+    highest = 0;
+    for(property in counts) {
+        console.log(highest,counts[property])
+        if(counts[property] > highest){
+            highest = counts[property]
+            coat = property
+        }
+    }
 
     xhr.open("GET","https://catfact.ninja/facts",false);
 
@@ -26,11 +52,14 @@ function CatstingHome() {
 
     var paragraph = document.getElementById("facts");
     var paragraph2 = document.getElementById("races");
+    var paragraph3 = document.getElementById("coat");
     var text = document.createTextNode(facts);
     var text2 = document.createTextNode(races);
+    var text3 = document.createTextNode(coat);
 
     paragraph.appendChild(text);
     paragraph2.appendChild(text2);
+    paragraph3.appendChild(text3);
 }
     
 CatstingHome();
