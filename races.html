@@ -29,7 +29,27 @@
           </nav>
     </header>
     <body>
-        
+        <div style="display: flex; justify-content: center; gap: 50px; margin-top: 50px;">
+            <div class="card" style="width: 400px; height: 600px; background-color: #343434;">
+                <div style="text-align: left;">
+                    <div style="color: #FF7F57; padding: 20px 0 0 20px">Races</div><div id="numResults"></div>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
+                    <select id="country" name="country" class="form-select" style="width: 170px; background-color: #FF7F57; border: none; padding: 0 20px 0 20px; text-align: center; font-size: 15px; box-shadow: none;">
+                        <option style="width: 170px;" value="Par pays">Par pays</option>
+                    </select>
+                    <select name="coat" class="form-select" style="width: 170px; background-color: #FF7F57; border: none; padding: 0 20px 0 20px; text-align: center; font-size: 15px; box-shadow: none">
+                        <option value="Par pelage">Par pelage</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="card" style="height: 250px; width: 770px;">
+                    <p style="color: #FF7F57; font-size: 20px; padding-top: 20px;">Race</p>
+                    <span id="anecdote" style="color: white; margin: 40px auto 0 auto; width: 700px;">Affichez une les informations d'une race spécifique</span>
+                </div>
+            </div>
+        </div>
         <script type="text/javascript" src="script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     </body>
